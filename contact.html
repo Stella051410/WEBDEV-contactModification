@@ -12,74 +12,6 @@
     <link rel="shortcut icon" href="file_0000000044f861f89a00071b09c8cf49.png" type="image/x-icon">
 </head>
  
-<script>
-    function validateForm() {
-        let firstname = document.getElementById("firstname").value.trim();
-        let lastname = document.getElementById("lastname").value.trim();
-        let  telephone = document.getElementById("telephone").value.trim();
-        let email = document.getElementById("email").value.trim();
-        let group = document.getElementById("group").value.trim();
-        let province = document.getElementById("province").value.trim();
-        let city = document.getElementById("city").value.trim();
-        let barangay = document.getElementById("barangay").value.trim();
-        let street = document.getElementById("street").value.trim();
-        let message = document.getElementById("message").value.trim();
-
-        if (!firstname || !lastname || !telephone || !email || !group || !province || !city || !barangay || !street || ! message ) {
-            alert("Opps... You must fill in all the input fields.");
-            return false;
-        }
-
-        if ( firstname.toLowerCase() === lastaname.toLowerCase()) {
-            alert("Please make it sure that your First Name and Last Name are not the same. ");
-            return false;
-        }
-
-        let provinceCities = {
-            DDLN:[" tagum", "kapalong"],
-            DDLS: [" bansalan" , "magsaysay"],
-            DOR: [" cateel" , "baganga"],
-            DOC: [" donmar" , "sarangani"],
-            DDO: [" laak" , "pantukan"]
-        };
-
-        if (!provinceCities[province].includes(city)) {
-            alert("Your choosen city is not found in the selected provine.");
-            return false;
-        }
-
-        let cityBarangays = {
-            tagum: ["lf"], 
-            kapalong: ["visayan"],
-            bansalan: ["kptn"],
-            magsaysay: ["kaligutan"],
-            cateel: ["linao"],
-            baganga: ["mabuhay"],
-            donmar: ["new co"],
-            sarangani: ["langtud"],
-            laak: ["pob"],
-            pantukan: ["kilagding"]
-        };
-
-        if (!cityBarangays[city] || !cityBarangays.includes(barangay)) {
-            alert(" Your choosen barangay is not found in the selected city.");
-            return false;
-        }
-
-        if (isNaN(telephone)) {
-            alert("Valid format not include letters or special character.Numbers Only!");
-            return false;
-        }
-
-        if  (msg.length <=10) {
-            alert("You must write more than 10 characters and you proceed...");
-            return false;
-        }
-
-        alert("Your Form has been submitted successfuly!");
-        return true;
-    }
-</script>
 
 <body>
     <header>
@@ -102,7 +34,7 @@
     </section>
 
  <section class="form-section">
-            <form onsubmit="returndateForm()">
+            <form onsubmit="return validateForm()">
                 <div class="form">
                     <label for="firstname">First Name</label>
                     <div class="inputype">
@@ -176,8 +108,8 @@
                             <option value="pantukan">Pantukan</option>
                             <option value="tagum">Tagum City</option>
                             <option value="kapalong">Kapalong</option>
-                            <option value=" bansalan">Bansalan</option>
-                            <option value=" magsaysay">Magsaysay</option>
+                            <option value="bansalan">Bansalan</option>
+                            <option value="magsaysay">Magsaysay</option>
                             <option value="cateel ">Cateel</option>
                             <option value="baganga">Baganga </option>
                             <option value="donmar ">Don Marcelino</option>
@@ -232,18 +164,88 @@
                         <textarea id="message" name="message" placeholder="write something..." ></textarea>   
                     </div>
                 </div>
-                
-            </form>
+
                 <div class="btn">
                         <button type="submit">Submit</button>
-                </div>
+                </div>                
+                
+            </for6m>
+
         </section>
     </div>
 
-
-    <footer>
+    <footer class="foot">
         <span> Copyright &copy; 2025 Watermelon</span>
     </footer>
+
+    <script>
+    function validateForm() {
+        let firstname = document.getElementById("firstname").value.trim();
+        let lastname = document.getElementById("lastname").value;
+        let  telephone = document.getElementById("telephone").value;
+        let email = document.getElementById("email").value;
+        let group = document.getElementById("group").value;
+        let province = document.getElementById("province").value;
+        let city = document.getElementById("city").value;
+        let barangay = document.getElementById("barangay").value;
+        let street = document.getElementById("street").value;
+        let message = document.getElementById("message").value;
+
+        if (!firstname || !lastname || !telephone || !email || !group || !province || !city || !barangay || !street || ! message ) {
+            alert("Opps... You must fill in all the input fields.");
+            return false;
+        }
+
+        if ( firstname.toLowerCase() === lastname.toLowerCase()) {
+            alert("Please make it sure that your First Name and Last Name are not the same.");
+            return false;
+        }
+
+        let provinceCities = {
+            DDLN:[" tagum", "kapalong"],
+            DDLS: [" bansalan" , "magsaysay"],
+            DOR: [" cateel" , "baganga"],
+            DOC: [" donmar" , "sarangani"],
+            DDO: [" laak" , "pantukan"]
+        };
+
+        if (!provinceCities[province].includes(city)) {
+            alert("Your choosen city is not found in the selected province.");
+            return false;
+        }
+
+        let cityBarangays = {
+            tagum: ["lf"], 
+            kapalong: ["visayan"],
+            bansalan: ["kptn"],
+            magsaysay: ["kaligutan"],
+            cateel: ["linao"],
+            baganga: ["mabuhay"],
+            donmar: ["new co"],
+            sarangani: ["langtud"],
+            laak: ["pob"],
+            pantukan: ["kilagding"]
+        };
+s
+        if (!cityBarangays[city] || !cityBarangays[city].includes(barangay)) {
+            alert(" Your choosen barangay is not found in the selected city.");
+            return false;
+        }
+
+        if (isNaN(telephone)) {
+            alert("Valid format not include letters or special character.Numbers Only!");
+            return false;
+        }
+
+        if  (message.length <= 10) {
+            alert("You must write more than 10 characters and you proceed...");
+            return false;
+        }
+
+        alert("Your Form has been submitted successfuly!");
+        return true;
+    }
+</script>
 
 
 </body>

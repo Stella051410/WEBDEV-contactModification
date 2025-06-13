@@ -18,6 +18,7 @@
         align-items: center;
         text-align: center;
         margin-bottom: 5px;
+        width: 100%;
     }
 
     nav li {
@@ -29,10 +30,20 @@
     nav a {
         margin-top: 25px;
         font-size: 12px;
+        width: 100%;
     }
 
-    h2 {
-        font-size: 25px;
+    
+.content  {
+    margin-top: -30px;
+}
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 13px;
     }
 
     
@@ -48,23 +59,30 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin:auto;
+        border-radius: 20px;
+        
 
     }
 
+
     .box img {
         width: 98.5%;
-        height: 300px;
+        height: 70px;
         flex-direction: column;
-        margin: 10px;
-        margin-bottom: 25px;
+        margin-bottom: 45px;
+        margin:auto;
+        padding: 15px;
+        border-radius: 20px;
 
     }
  
     .box {
         width: 98.5%;
-        height: 300px;
+        height: 70px;
         flex-direction: column;
-        margin-bottom: 25px;
+        margin: auto;
+        border-radius: 20px;
 
     }
 
@@ -90,7 +108,7 @@
         height: 300px;
         display: block;
         flex-direction: column;
-        margin: 10px;
+        
 
     }
  
@@ -99,9 +117,11 @@
         height: 300px;
         display: block;
         flex-direction: column;
-        margin-bottom: 25px;
+        margin: auto;
 
     }
+
+
 
     .footer {
         align-items: center;
@@ -115,12 +135,24 @@
 /*Contact*/
 
 @media (max-width: 600px) { 
-    
+
+    .form-section {
+    padding: 8px;
+}
+
+section {
+    margin-bottom: 150px;
+}
+
 
    .inputype {
     width: 100%;
     margin:0;
    }
+}
+
+button {
+    margin: 20px;
 }
 
 
@@ -161,11 +193,12 @@
     }
 
     nav a {
-        margin-top: 30px;
+        margin-top: -30px;
     }
 
     .form-section {
     margin-top: -150px;
+    padding: 20px;
 }
 
     .inputype {
@@ -182,6 +215,7 @@
         width: 100%;
         display: flex;
         margin: 0;
+        margin-bottom: 90px;
     }
 
     footer {

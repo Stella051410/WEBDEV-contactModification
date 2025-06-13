@@ -50,16 +50,18 @@ a:hover {
 
 
 .form-section {
-    padding: 60px;
+    padding: 100px ;
     border-radius: 5px;
-    margin-top: -190px;
+    margin-top: -200px;
 }
 
 
 
 .form {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
+
+
 
 
 .form label {
@@ -99,7 +101,7 @@ textarea {
 }
 
 
-button {
+ form button {
     background-color: palevioletred;
     color: #ffffff;
     border-radius: 5px;
@@ -110,7 +112,7 @@ button {
     display: block;
 }
 
-.btn {
+form button .btn {
     margin-left: auto;
     justify-content: flex-end;
     align-items: flex-end;
@@ -127,6 +129,7 @@ button:hover {
 footer {
     text-align: center;
     padding: 25px;
+    font-size: 12px;
     color: #ffffff;
-    background-color: palevioletred;
+    background-color: rgb(243, 131, 170);
 }
