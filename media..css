@@ -1,0 +1,190 @@
+ @media (max-width:600px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo img {
+        justify-content: center;
+        align-items: center ;
+    }
+
+    nav {
+        width: 100%;
+    }
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    nav li {
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding:  15px 25px;
+    }
+
+    nav a {
+        margin-top: 25px;
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    
+        .banner img{
+            width: 100%;
+            height: 200px;
+        }
+
+
+
+    .boxes {
+        width: 98.5%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .box img {
+        width: 98.5%;
+        height: 300px;
+        flex-direction: column;
+        margin: 10px;
+        margin-bottom: 25px;
+
+    }
+ 
+    .box {
+        width: 98.5%;
+        height: 300px;
+        flex-direction: column;
+        margin-bottom: 25px;
+
+    }
+
+    .footer {
+    text-align: center;
+    padding: 25px;
+    color: #ffffff;
+    background-color: paleviole
+    }
+
+
+}
+
+@media (max-width: 1120px) { 
+    .boxes {
+        display: block;
+        width: 98.5%;
+        flex-direction: column;
+    }
+
+    .box img {
+        width: 98.5%;
+        height: 300px;
+        display: block;
+        flex-direction: column;
+        margin: 10px;
+
+    }
+ 
+    .box {
+        width:98.5%;
+        height: 300px;
+        display: block;
+        flex-direction: column;
+        margin-bottom: 25px;
+
+    }
+
+    .footer {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+}
+ 
+
+/*Contact*/
+
+@media (max-width: 600px) { 
+    
+
+   .inputype {
+    width: 100%;
+    margin:0;
+   }
+}
+
+
+/*Table 1000px Contact*/
+
+@media (max-width: 1000px) { 
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo img {
+        justify-content: center;
+        align-items: center ;
+    }
+
+    nav {
+        width: 100%;
+    }
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+
+    nav li {
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding:  15px 25px;
+    }
+
+    nav a {
+        margin-top: 30px;
+    }
+
+    .form-section {
+    margin-top: -150px;
+}
+
+    .inputype {
+     width: 100%;
+     margin:0;
+    }
+
+
+
+    button {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        margin: 0;
+    }
+
+    footer {
+        align-items: center;
+    }
+ }
