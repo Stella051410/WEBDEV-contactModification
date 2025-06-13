@@ -34,7 +34,7 @@
     </section>
 
  <section class="form-section">
-            <form onsubmit="return validateForm()">
+            <form>
                 <div class="form">
                     <label for="firstname">First Name</label>
                     <div class="inputype">
@@ -56,9 +56,9 @@
                 
 
                 <div class="form">
-                    <label for="telephone">Telephone No.</label>
+                    <label for="telnum">Telephone No.</label>
                     <div class="inputype">
-                        <input type="tel" id="telephone" name="telephone" placeholder="+639634769388 or 09634667388" >
+                        <input type="tel" id="telnum" name="telnum" placeholder="Valid Format: +639634769388 or 09634667388" >
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@
                     <label for="province">Province</label>
                     <div class="inputype">
                       <select type="text" id="province" name="province" >
-                            <option value="">Select your Province</option>
+                            <option value="" disabled selected>Select your Province</option>
                             <option value="DDO">Davao De Oro</option>
                             <option value="DDLN">Davao Del Norte</option>
                             <option value="DDLS">Davao Del Sur</option>
@@ -103,27 +103,13 @@
                     <label for="city">City/Town</label>
                     <div class="inputype">
                         <select id="city" name="city">
-                            <option value="">Select your Municipality or City</option>
-
-                            <p>Davao De Oro</p>
+                            <option value="" disabled selected>Select your Municipality or City</option>
                             <option value="laak">Laak</option>
-                            <option value="pantukan">Pantukan</option>
-                            
-                            <label>Davao Del Norte</label>
-                            <option value="asunsion">Asunsion</option>
                             <option value="tagum">Tagum City</option>
-
-                            <label>Davao Del Sur</label>
-                            <option value="kapalong">Kapalong</option>
+                            <option value="asuncion">Asuncion</option>
                             <option value="bansalan">Bansalan</option>
-
-                            <label for="">Davao Oriental</label>
-                            <option value="magsaysay">Magsaysay</option>
-                            <option value="cateel ">Cateel</option>
-                            
-                            <label>Davao Occidental</label>
-                            <option value="baganga">Baganga </option>
-                            <option value="donmar ">Don Marcelino</option>
+                            <option value="cateel">Cateel</option>
+                            <option value="donmar">Don Marcelino</option>
 
                         </select>
                     </div>
@@ -139,15 +125,11 @@
                         <select id="barangay" name="barangay">
                             <option value="">Select your Barangay</option>
                             <option value="pob">brgy. Poblacion</option>
-                            <option value="kptn">brgy. Kapatagan</option>
+                            <option value="manki">brgy. Mankilam</option>
                             <option value="lf">brgy. La filipina</option>
-                            <option value="visayan">brgy. Visayan</option>
-                            <option value="kaligutan">brgy. Kaligutan</option>
-                            <option value="kilagding">brgy. Kilagding</option>
-                            <option value="langtud">brgy. Langtud</option>
+                            <option value="marikit">brgy. Marikit</option>
                             <option value="mabuhay">brgy. Mabuhay</option>
-                            <option value="new co">brgy. New Corellia</option>
-                            <option value="linao">brgy. Linao</option>
+                            <option value="newco">brgy. New Corellia</option>
 
                         </select>
                     </div>  
@@ -176,10 +158,10 @@
                 </div>
 
                 <div class="btn">
-                        <button type="submit">Submit</button>
+                        <button onclick="sub()">Submit</button>
                 </div>                
                 
-            </for6m>
+            </form>
 
         </section>
     </div>
@@ -189,72 +171,50 @@
     </footer>
 
     <script>
-    function validateForm() {
+    function sub() {
         let firstname = document.getElementById("firstname").value.trim();
-        let lastname = document.getElementById("lastname").value;
-        let  telephone = document.getElementById("telephone").value;
-        let email = document.getElementById("email").value;
-        let group = document.getElementById("group").value;
+        let lastname = document.getElementById("lastname").value.trim();
+        let  telnum = document.getElementById("telnum").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let group = document.getElementById("group").value.trim();
         let province = document.getElementById("province").value;
         let city = document.getElementById("city").value;
         let barangay = document.getElementById("barangay").value;
-        let street = document.getElementById("street").value;
-        let message = document.getElementById("message").value;
+        let street = document.getElementById("street").value.trim();
+        let message = document.getElementById("message").value.trim();
 
-        if (!firstname || !lastname || !telephone || !email || !group || !province || !city || !barangay || !street || ! message ) {
-            alert("Opps... You must fill in all the input fields.");
+        if (!firstname || !lastname  || !telnum  || !email  || !group || !province  || !city  || !barangay || !street  || !message  ) {
+            alert("Opps... You must fill in all the empty.");
             return false;
         }
-
-        if ( firstname.toLowerCase() === lastname.toLowerCase()) {
-            alert("Please make it sure that your First Name and Last Name are not the same.");
-            return false;
+            
+        else {
+       
+         if(firstname.toLowerCase() === lastname.toLowerCase()) {
+            alert ("Invalid: First and Last Name are the same!!");
         }
 
-        let provinceCities = {
-            DDO:[ "laak" , "pantukan"],
-            DDLN: ["asunsion" , "tagum"],
-            DDLS: ["kapalong" , "bansalan"],
-            DOR: ["magsaysay" , "cateel"],
-            DOC: ["baganga" , "donmar"]
-        };
-
-        if (!provinceCities[province].includes(city)) {
-            alert("Your choosen city is not found in the selected province.");
-            return false;
+        else if(isNaN(telnum)) {
+            alert("Valid format must be Numbers!! (ex. 09634769388)");
         }
 
-        let cityBarangays = {
-            laak: ["pob"], 
-            pantukan: ["kptn"],
-            asunsion: ["lf"],
-            tagum: ["visayan"],
-            kapalong: ["kaligutan"],
-            bansalan: ["kilagding"],
-            magsaysay: ["langtud"],
-            cateel: ["mabuhay"],
-            baganga: ["new co"],
-            donmar: ["linao"]
-        };
-s
-        if (!cityBarangays[city] || !cityBarangays[city].includes(barangay)) {
-            alert(" Your choosen barangay is not found in the selected city.");
-            return false;
+        else if(province !== "DDLN" || city !== "tagum" || barangay !== "manki") {
+            alert(" Wrong Address! ");
+
+        }
+        
+
+        else if (message.length < 10) {
+            alert("You must message at least 10 characters long..");
         }
 
-        if (isNaN(telephone)) {
-            alert("Valid format not include letters or special character.Numbers Only!");
-            return false;
+        else {
+            alert("Your Form has been Submitted successfully!");
         }
-
-        if  (message.length <= 10) {
-            alert("You must write more than 10 characters and you proceed...");
-            return false;
-        }
-
-        alert("Your Form has been submitted successfuly!");
-        return true;
     }
+    
+}
+ 
 </script>
 
 
